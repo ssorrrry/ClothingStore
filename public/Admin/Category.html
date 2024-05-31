@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>Категории</title>
+        <style>
+            body{
+                background-color: #1D1D1D;
+                color: #FFF;
+                font-family: Arial;
+            }
+            table{
+                border-collapse: collapse;
+            }
+            .header{
+                width: 100%;
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+            }
+            .footer a{
+                color: #fff;
+            }
+            .footer{
+                height: 200px;
+                text-align: center;
+            }
+            .text{
+                text-align: right;
+                position: relative;
+            }
+            .category {
+                right: 410px;
+                position: absolute;
+            }
+            .product {
+                right: 290px;
+                position: absolute;
+            }
+            .order{
+                right: 170px;
+                position: absolute;
+            }
+            .account{
+                right: 50px;
+                position: absolute;
+            }
+            .category_table{
+                border-bottom: 1px solid #fff;
+                height: 70px;
+                width: 200px;
+            }
+            .input_text{
+                background-color: #1D1D1D;
+                color: #fff;
+                border: none; 
+                font-size: 16px;
+            }
+            .submit-update{
+                width: 150px;
+                height: 30px;
+                padding: 5px;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                background-color: #fff;
+                color: #000;
+            }
+            .submit-delete{
+                width: 150px;
+                height: 30px;
+                padding: 5px;
+                border-radius: 10px;
+                border: none;
+                background-color: #000;
+                color: #FFF;
+            }
+            div{
+                width: 40%;
+                padding: 20px;
+                border-radius: 10px;
+                background: #fff;
+                color: #000;
+            }
+        </style>
+    </head>
+    <body>
+        <script src='/jQuery.js'></script>
+        <script src='/Admin/RequestsCategory.js'></script>
+        <table class='header'>
+            <tr>
+                <td>
+                    <h1><a href="/Admin">LIME</a></h1>
+                </td>
+                <td class='text'>
+                    <a href="/Admin/Category.html" class='category'>Категории</a>
+                    <a href="/Admin/Products.html" class='product'>Продукты</a>
+                    <a href="/Admin/Orders.html" class='order'>Заказы</a>
+                    <a href="/log_out" class="account">Выйти</a>
+                </td>
+                
+            </tr>
+        </table>
+        <h2>Категории</h2>
+        <table id ='category'></table>
+        <table>
+            <tr>
+                <td class='category_table'>
+                    <input type='text' name='name' placeholder='новая категория' require class='input_text'>
+                </td>
+                <td class='category_table'>
+                    <input type='button' value='Создать' name='create' class='submit-update'>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        <div id='log'></div>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>Админ Главная</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <style>
+            body{
+            background-color: #1D1D1D;
+            color: #FFF;
+            font-family: Arial;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td{
+            height: 700px;
+            width: 33.33%;
+        }
+        .first{
+            background: url('../../Photo/Design/tetiana-kobzeva-kKH1jVoTHbM-unsplash.png') center/cover;
+            text-align: left;
+            position: relative;
+        }
+        .first h1{
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            font-size: 50px;
+        }
+        .second{
+            background: url('../../Photo/Design/tetiana-kobzeva-XEIre5A72-Q-unsplash 1.png') center/cover;
+        }
+        .third{
+            background: url('../../Photo/Design/tetiana-kobzeva-6CTzm4_YrhM-unsplash.png') center/cover;
+            text-align: right;
+            position: relative;
+            padding: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        .third a{
+            position: absolute;
+            top: 60px;
+            color: #000;
+        }
+        .footer a{
+            color: #fff;
+        }
+        a:hover {
+            color: #434343;
+        }
+        .category {
+            right: 410px;
+        }
+        .products {
+            right: 290px;
+        }
+        .orders{
+            right: 170px;
+        }
+        .account{
+            right: 50px;
+        }
+        .fourth{
+            background: url('/Photo/Design/tetiana-kobzeva-MH8Tm1NNcYI-unsplash 1.png') center/cover;
+        }
+        .fifth{
+            background: url('/Photo/Design/tetiana-kobzeva-h7a0HOvY77w-unsplash 1.png') center/cover;
+        }
+        .footer{
+            height: 200px;
+            text-align: center;
+        }
+        #info{
+            margin: 20px;
+            text-align: center;
+        }
+        #info a{
+            color: #FFF;
+        }
+        #info a:hover{
+            color: #434343;
+        }
+        </style>
+    </head>
+    <body>
+        <script src="/jQuery.js"></script>
+        <script src="/Admin/RequestsAdmin.js"></script>
+        <table>
+            <tr>
+                <td class="first">
+                    <a href='/Admin'><h1>LIME</h1></a>
+                </td>
+                <td class="second"></td>
+                <td class="third">
+                    <a href="/Admin/Category.html" class="category">Категории</a>
+                    <a href="/Admin/Products.html" class="products">Продукты</a>
+                    <a href="/Admin/Orders.html" class="orders">Заказы</a>
+                    <a href="/log_out" class="account">Выйти</a>
+                </td>
+            </tr>
+        </table>
+        <div id="info">
+            <div>
+            <h2>Информация о проекте Lime</h2><br>Вы находить в административной панеле. С ее помощью вы можете редактировать контент на сайте: добавлять, изменять и удалять<br><br><br>
+            </div>
+            <a>Скрыть</a>
+        </div>
+        <table>
+            <tr>
+                <td class="fourth"></td>
+                <td class="fifth"></td>
+            </tr>
+        </table>
+        <br>
+        <table class='table-footer'>
+            <tr>
+                <td class="footer"> 
+                </td>
+                <td class="footer">
+                    LIME<br>
+                    магазин женской одежды<br><br>
+                </td>
+                <td class="footer">
+                    Контакты<br>
+                    8(800)000-00-00<br>
+                    lime@mail.ru
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

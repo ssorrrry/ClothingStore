@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>LIME</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <style>
+        body{
+            background-color: #1D1D1D;
+            color: #FFF;
+            font-family: Arial;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td{
+            height: 700px;
+            width: 33.33%;
+        }
+        .first{
+            background: url('../Photo/Design/tetiana-kobzeva-kKH1jVoTHbM-unsplash.png') center/cover;
+            text-align: left;
+            position: relative;
+        }
+        .first h1{
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            font-size: 50px;
+        }
+        .second{
+            background: url('../Photo/Design/tetiana-kobzeva-XEIre5A72-Q-unsplash 1.png') center/cover;
+        }
+        .third{
+            background: url('../Photo/Design/tetiana-kobzeva-6CTzm4_YrhM-unsplash.png') center/cover;
+            text-align: right;
+            position: relative;
+            padding: 10px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .third a, .third input{
+            position: absolute;
+            top: 60px;
+            color: #000;
+        }
+        .footer a{
+            color: #fff;
+        }
+        a:hover {
+            color: #434343;
+        }
+        .catalog {
+            right: 350px;
+        }
+        .basket {
+            right: 200px;
+        }
+        .account{
+            right: 50px;
+        }
+        .fourth{
+            background: url('../Photo/Design/tetiana-kobzeva-MH8Tm1NNcYI-unsplash 1.png') center/cover;
+        }
+        .fifth{
+            background: url('../Photo/Design/tetiana-kobzeva-h7a0HOvY77w-unsplash 1.png') center/cover;
+        }
+        .footer{
+            height: 200px;
+            text-align: center;
+        }
+        .submit{
+            border: none;
+            background-color: transparent;
+            font-size: 16px;
+        }
+        #info{
+            margin: 20px;
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <script src="jQuery.js"></script>
+        <script src="RequestsLime.js"></script>
+        <table>
+            <tr>
+                <td class="first">
+                    <h1>LIME</h1>
+                </td>
+                <td class="second"></td>
+                <td class="third">
+                    <a href="/ProductCatalog" class="catalog">Каталог</a>
+                    <a href="Basket" class="basket">Корзина</a>
+                    <a href='/Registration' class='account'>Войти</a>
+                </td>
+            </tr>
+        </table>
+        <div id="info">
+            <div>
+            <h2>Информация о проекте Lime</h2><br> На сайте представлен каталог товаров, любой пользователь может посмотреть их. Для того, чтобы добавить товар в корзину и после оформить заказ, пользователь должен авторизоваться в системе. Через страницу авторизации выполняется и доступ к административной панели. <br><br><br>
+            </div>
+            <a>Скрыть</a>
+        </div>
+        
+        <table>
+            <tr>
+                <td class="fourth"></td>
+                <td class="fifth"></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td class="footer"> 
+                </td>
+                <td class="footer">
+                    LIME<br>
+                    магазин женской одежды<br><br>
+                    <a href="ProductCatalog.php">Каталог</a>
+                </td>
+                <td class="footer">
+                    Контакты<br>
+                    8(800)000-00-00<br>
+                    lime@mail.ru
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

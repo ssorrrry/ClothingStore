@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <title>Корзина</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                margin-bottom: 60px;
+            }
+            table{
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .text{
+                text-align: right;
+                position: relative;
+            }
+            .catalog {
+                right: 350px;
+                position: absolute;
+            }
+            .basket {
+                right: 200px;
+                position: absolute;
+            }
+            .account{
+                right: 50px;
+                position: absolute;
+            }
+            a{
+                text-decoration: none;
+                color: #000;
+            }
+            .table-basket{
+                width: 50%;
+                border-spacing: 12px;
+                font-size: 14px;
+            }
+            .table-basket td{
+                border-bottom: 1px solid #ccc;
+                padding: 10px;
+            }
+            .number {
+                width: 80px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+            }
+            .submit-update{
+                width: 150px;
+                height: 30px;
+                padding: 5px;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                background-color: #fff;
+                color: #000;
+            }
+            .submit-delete{
+                width: 150px; 
+                height: 30px;
+                padding: 5px;
+                border-radius: 10px;
+                border: none;
+                background-color: #000;
+                color: #FFF;
+            }
+            .log_out{
+                border: none;
+                background-color: transparent;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body> 
+        <script src="/jQuery.js"></script>
+        <script src="/RequestsBasket.js"></script>
+        <table>
+            <tr>
+                <td>
+                    <h1><a href="/">LIME</a></h1>
+                </td>
+                <td class='text'>
+                    <a href="/ProductCatalog" class='catalog'>Каталог</a>
+                    <a href="/Basket" class='basket'>Корзина</a>
+                    <a href='/Registration' class='account'>Войти</a>
+                </td>
+            </tr>
+        </table>
+        <table class="table-basket">
+            <%let total_sum = 0;
+            for(let i = 0; i < products.length; i++){%>
+            <tr>
+                <td><image src="<%=products[i].image%>" width=100px height=auto></td>
+                <td>
+                    <%=products[i].title%><br>
+                    <span id="price"><%=products[i].price%></span> руб x <span id="quantity"><%=products[i].quantity%></span> <br><br> <span id="sum"><%=products[i].price * products[i].quantity%></span> руб
+                </td>
+                <td>
+                    Размер: <%=products[i].size%><br><br>
+                    Количество: <input type='number' name='quantity_product_update' value = '<%=products[i].quantity%>' min='0' class='number'>
+                </td>
+                <td>
+                    <input type='hidden' name='id_product_update' value='<%=products[i].id%>'>
+                    <input type='hidden' name='size_product_update' value='<%=products[i].size%>'>
+                    <input type='submit' value='Редактировать' name='update' class='submit-update'><br><br>
+                    <input type='submit' value='Удалить' name='delete' class='submit-delete'>
+                </td>
+            </tr>
+            <%
+            total_sum += products[i].price * products[i].quantity;
+            }%>
+            
+        </table>
+        <br>
+        <% if (products.length > 0) { %>
+            <div class="res">
+            Итого: <span id="total_sum"><%= total_sum %></span> руб.<br><br>
+            <input type='hidden' name='total_price' value='<%= total_sum %>'>
+            <input type='submit' value='Купить' name='buy' class='submit-update'>
+            <input type='submit' value='Очистить' name='clear' class='submit-delete'>
+            </div>
+        <% } else { %>
+            Пусто  
+        <% } %>
+        
+        
+
+    </body>
+</html>

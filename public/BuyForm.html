@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>Оформление заказа</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                margin-bottom: 60px;
+                text-align: center;
+            }
+            select {
+                width: 200px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+            }
+            .input{
+                width: 200px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+            }
+            table{
+                font-size: 14px;
+                margin: auto;
+            }
+            td{
+                height: 50px;
+            }
+            a{
+                text-decoration: none;
+                color: #000;
+            }
+            .back{
+                width: 150px;
+                height: 30px;
+                padding: 5px;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                background-color: #fff;
+                color: #000;
+            }
+            .buy{
+                width: 150px;
+                height: 30px;
+                padding: 5px;
+                border-radius: 10px;
+                border: none;
+                background-color: #000;
+                color: #FFF;
+            }
+            .content{
+                margin-top: 10%;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="/jQuery.js"></script>
+        <script src="/RequestsBuyForm.js"></script>
+        <div class="content">
+        <h2>ОФОРМЛЕНИЕ ЗАКАЗА</h2>
+        <div style="text-align: center;">
+        <table>
+            <tr>
+                <td>Ваше имя: </td>
+                <td>
+                    <input type="text" name="name" placeholder="Ваше имя" required class='input'>
+                </td>
+            </tr>
+            <tr>
+                <td>Номер телефона: </td>
+                <td>
+                    <input type="tel" name="telephone" placeholder="x (xxx) xxx-xx-xx" required pattern="[0-9]{11}" class='input'>
+                </td>
+            </tr>
+            <tr>
+                <td>Способ получения: </td>
+                <td>
+                    <select name='method_obtaining'>
+                        <option>Доставка</option>
+                        <option>Самовывоз</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Способ оплаты: </td>
+                <td>
+                    <select name='method_payment'>
+                        <option>Карта</option>
+                        <option>Наличные</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Сумма к оплате: </td>
+                <td>
+                    <span id="total_sum"></span> руб.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='/Basket'><input type='button' value='Вернуться' class='back'></a>
+                </td>
+                <td>
+                    <input type='submit' value='Оформить' class='buy' name='buy'>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    </body>
+</html>

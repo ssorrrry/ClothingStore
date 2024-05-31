@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <title><%=product.title%></title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+            }
+            h2{
+                font-size: 24px;
+            }
+            table{
+                width: 100%;
+            }
+            .table-product{
+                width: 60%;
+                margin: auto;
+                border-spacing: 16px;
+            }
+            .table-product td{
+                height: 600px;
+                font-size: 12px;
+            }
+            .image{
+                background: url('../../<%=product.image%>') center/cover;
+                width: 50%;
+            }
+            select {
+                width: 200px; /* Задайте нужную ширину списка */
+                padding: 5px;
+                border: 1px solid #ccc; /* Цвет обводки */
+                border-radius: 10px; /* Радиус закругления углов */
+            }
+            .submit{
+                width: 200px; /* Задайте нужную ширину списка */
+                height: 35px;
+                padding: 5px;
+                border-radius: 10px;
+                border: none;
+                background-color: #000;
+                color: #FFF;
+            }
+            .text{
+                text-align: right;
+                position: relative;
+            }
+            .catalog {
+                right: 350px;
+                position: absolute;
+            }
+            .basket {
+                right: 200px;
+                position: absolute;
+            }
+            .account{
+                right: 50px;
+                position: absolute;
+            }
+            a{
+                text-decoration: none;
+                color: #000;
+            }
+            .log_out{
+                border: none;
+                background-color: transparent;
+                font-size: 16px;
+            }
+            .error{
+                color: #ff0000;
+            }
+            .footer{
+                height: 200px;
+                text-align: center;
+            }
+            .table-footer{
+                background-color: #1D1D1D;
+                color: #FFF;
+
+            }
+            .table-footer td{
+                width: 33.33%;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="/jQuery.js"></script>
+        <script src="/RequestsProduct.js"></script>
+        <table>
+            <tr>
+                <td>
+                    <h1><a href="/">LIME</a></h1>
+                </td>
+                <td class='text'>
+                    <a href="/ProductCatalog" class='catalog'>Каталог</a>
+                    <a href="/Basket" class='basket'>Корзина</a>
+                    <a href='/Registration' class='account'>Войти</a>
+                </td>
+            </tr>
+        </table>
+        <table class="table-product">
+            <tr>
+                <td class="image">
+                </td>
+                <td>
+                    <h2><%= product.title %></h2>
+                    <h2><%= product.price %> руб.</h2><br>
+                    Арт.: <%= product.article %><br><br>
+                    <%= product.description %><br><br>
+                    Цвет: <span id="color"><%= product.color %></span><br><br><br>
+                    Размер<br>
+                    <select name = "size">
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+                    <br><br>
+                    <input type="hidden" name="id_product" value="<%= product.id %>">
+                    <input type = "submit" value="Добавить в корзину" class="submit">
+                    <br><br><br><br>
+                    <span class='error'></span>
+                </td>
+            </tr>
+        </table><br><br>
+        <br><br>
+        <h3>УХОД ЗА ОДЕЖОЙ</h3>
+        <table>
+            <tr>
+                <td text-align="center">
+                    <h4>Стирка</h4>
+                    Стирать при рекомендуемой температуре и избегать использования агрессивных моющих средств. Разделяйте белые и цветные вещи, чтобы предотвратить линьку. Используйте деликатный режим для тонких тканей.
+                </td>
+                <td>
+                    <h4>Сушка</h4>
+                    Сушите одежду на воздухе, чтобы сохранить её форму и цвет. Избегайте прямых солнечных лучей для предотвращения выцветания. Для некоторых тканей предпочтительна сушка в расправленном виде на горизонтальной поверхности.
+                </td>
+                <td>
+                    <h4>Глажка</h4>
+                    Гладьте при соответствующей температуре, указанной на ярлыке. Для деликатных тканей используйте влажную ткань или паровой утюг. Избегайте длительного воздействия утюга на одном месте, чтобы не повредить ткань</td>
+            </tr>
+        </table>
+        <br><br><br><br><br><br>
+        <h3>ВОЗВРАТ ТОВАРОВ</h3>
+        <table>
+            <td>
+                <td>
+                    <h4>Условия возврата</h4>
+                    Товар подлежит возврату в течение 30 дней с момента покупки. Возвращаемый товар должен быть в оригинальной упаковке, без признаков использования, с сохраненными ярлыками и чеков.
+                </td>
+                <td>
+                    <h4>Процедура возврата</h4>
+                    Заполните форму возврата, приложите копию чека и отправьте товар обратно по указанному адресу. Рекомендуем использовать отслеживаемую почтовую службу.
+                </td>
+                <td>
+                    <h4>Сроки и возмещение</h4>
+                    Возврат средств производится в течение 10 рабочих дней с момента получения и проверки товара. Деньги будут возвращены на тот же способ оплаты, который был использован при покупке.
+                </td>
+        </table>
+        <br><br><br><br><br>
+        <table class='table-footer'>
+            <tr>
+                <td class="footer"> 
+                </td>
+                <td class="footer">
+                    LIME<br>
+                    магазин женской одежды<br><br>
+                    Каталог
+                </td>
+                <td class="footer">
+                    Контакты<br>
+                    8(800)000-00-00<br>
+                    lime@mail.ru
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

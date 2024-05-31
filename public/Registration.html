@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <title>Авторизация</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                height: 100%;
+            }
+            table{
+                width: 100%;
+            }
+            a{
+                text-decoration: none;
+                color: #000;
+            }
+            .text{
+                text-align: right;
+                position: relative;
+            }
+            .input{
+                width: 200px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+            }
+            .log_in{
+                width: 100px;
+                height: 30px;
+                padding: 5px;
+                border-radius: 10px;
+                border: none;
+                background-color: #000;
+                color: #FFF;
+            }
+            .register{
+                width: 160px;
+                height: 30px;
+                padding: 5px;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                background-color: #fff;
+                color: #000;
+            }
+            .table-footer{
+                background-color: #1D1D1D;
+                color: #FFF;
+                position: absolute;
+                bottom: 0;
+            }
+            .table-footer td{
+                width: 33.33%;
+            }
+            .footer{
+                height: 200px;
+                text-align: center;
+            }
+            .form{
+                width: 0%;
+                margin: auto;
+            }
+            h2{
+                text-align: center;
+            }
+            .container{
+                margin-top: 100px;
+                text-align: center;
+            }
+            .error{
+                color: #ff0000;
+            }
+            .catalog {
+                right: 350px;
+                position: absolute;
+            }
+            .basket {
+                right: 200px;
+                position: absolute;
+            }
+            .account{
+                right: 50px;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="jQuery.js"></script>
+        <script src="RequestsRegistration.js"></script>
+        <table>
+            <tr>
+                <td>
+                    <h1><a href="/">LIME</a></h1>
+                </td>
+                <td class='text'>
+                    <a href="/ProductCatalog" class='catalog'>Каталог</a>
+                    <a href="/Basket" class="basket">Корзина</a>
+                    <a href='/Registration' class='account'>Войти</a>
+                </td>
+            </tr>
+        </table>
+        <div class='container'>
+            <h2>АВТОРИЗАЦИЯ</h2>
+                <table class='form'>
+                    <tr>
+                        <td>Логин: </td>
+                        <td><input type='text' name='login' class='input' required></td>
+                    </tr>
+                    <tr>
+                        <td>Пароль: </td>
+                        <td><input type='password' name='password' class='input' required></td>
+                    </tr>
+                </table>
+                <br>
+                <table class='form'>
+                    <tr>
+                        <td><input type='submit' value='Войти' name='log_in' class='log_in'></td>
+                        <td><input type='submit' value='Зарегистрироваться' name='register' class='register'></td>
+                    </tr>
+                </table>
+                <br>
+            <div class='error'></div>
+        </div>
+
+        <table class='table-footer'>
+            <tr>
+                <td class="footer"> 
+                </td>
+                <td class="footer">
+                    LIME<br>
+                    магазин женской одежды<br><br>
+                    Каталог
+                </td>
+                <td class="footer">
+                    Контакты<br>
+                    8(800)000-00-00<br>
+                    lime@mail.ru
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

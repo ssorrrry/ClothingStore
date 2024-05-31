@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>Каталог</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <style>
+            body{
+                font-family: Arial;
+                margin-top: 20px;
+            }
+            table{
+                width: 100%;
+            }
+            .td_product{
+                text-align: center;
+                height: 850px;
+            }
+            td{
+                width: 50%;
+            }
+            .text{
+                text-align: right;
+                position: relative;
+            }
+            .catalog {
+                right: 350px;
+                position: absolute;
+            }
+            .basket {
+                right: 200px;
+                position: absolute;
+            }
+            .account{
+                right: 50px;
+                position: absolute;
+            }
+            a{
+                text-decoration: none;
+                color: #000;
+            }
+            select {
+                width: 200px; 
+                padding: 5px;
+                border: 1px solid #ccc; 
+                border-radius: 10px; 
+            }
+            .submit{
+                width: 200px; 
+                height: 35px;
+                padding: 5px;
+                border-radius: 10px;
+                border: none;
+                background-color: #000;
+                color: #FFF;
+            }
+            .table-footer{
+                background-color: #1D1D1D;
+                color: #FFF;
+            }
+            .table-footer td{
+                width: 33.33%;
+            }
+            .footer{
+                height: 200px;
+                text-align: center;
+            }
+            .log_out{
+                border: none;
+                background-color: transparent;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="/jQuery.js"></script>
+        <script src="/RequestsCatalog.js"></script>
+        <table>
+            <tr>
+                <td>
+                    <h1><a href="/">LIME</a></h1>
+                </td>
+                <td class='text'>
+                    <span class='catalog'>Каталог</span>
+                    <a href="/Basket" class='basket'>Корзина</a>
+                    <a href='/Registration' class='account'>Войти</a>
+                </td>
+            </tr>
+        </table>
+            <table>
+                <tr>
+                    <td colspan="2" class='text'>
+                        Фильтр: 
+                        <select name = "category"> 
+                            <option value = 0>все</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        <table id="content">
+            <%for(let i = 0; i < products.length; i++){%>
+                <tr>
+                    <td class='td_product'> <a href='/ProductCatalog/Product/<%=products[i].article%>'>
+                    <img src = '<%= products[i].image %>'><br><br>
+                    <%= products[i].title %><br>
+                    <%= products[i].price %> руб
+                    <input type="hidden" name="id_category" value="<%=products[i].id_category%>">
+                    </a></td>
+                </tr>
+            <%}%>
+        </table>
+        <br>
+        <table class='table-footer'>
+            <tr>
+                <td class="footer"> 
+                </td>
+                <td class="footer">
+                    LIME<br>
+                    магазин женской одежды<br><br>
+                    Каталог
+                </td>
+                <td class="footer">
+                    Контакты<br>
+                    8(800)000-00-00<br>
+                    lime@mail.ru
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
